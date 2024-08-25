@@ -80,8 +80,7 @@ def chain_result(pdf_d):
               page = pdf.load_page(i)  # Load each page by index
               pages.append(page.get_text())  # Append the text of each page to the list
           # Combine all the page texts into a single string
-          raw_text2 = " ".join(page for page in pages if page)
-          x = raw_text2
+          raw_text2 = " ".join(page for page in pages if page) 
           
           raw_text2 = raw_text2[:-5000].lower()
           raw_text2 = re.sub(r' \n', '\n',re.sub(r'\n ', '\n', raw_text2)) #works
@@ -290,9 +289,9 @@ def chain_result(pdf_d):
       from langchain_core.documents import Document
       
       for _, row in st.session_state.df6.iterrows():
-               x =  Document(page_content = row["Contents"],
+               document11 =  Document(page_content = row["Contents"],
                metadata = {"Book name":row["book name"],"Chapter":row["Chapter"],"Topic":row["topic name"],"Subtopic":row["matched_subtopics"],"Subsubtopic":row["matched_subsubtopics"]})
-               docs11.append(x)
+               docs11.append(document11)
     
       from langchain_text_splitters import (
         RecursiveCharacterTextSplitter,
@@ -391,7 +390,7 @@ def chain_result(pdf_d):
       )
       
       return chain,vector_store
-x = 0
+
 def main():
     st.header("PDF CHATBOT")
 
