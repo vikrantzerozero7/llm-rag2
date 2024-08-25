@@ -393,7 +393,7 @@ def chain_result(pdf_d):
 
 def main():
     st.header("PDF CHATBOT")
-
+    st.write(x)
     # Check if pdf_d is already in session state, if not, initialize it
     query = st.text_input("Ask query and press enter",placeholder="Ask query and press enter",key = "key")
     
@@ -401,7 +401,7 @@ def main():
     
     st.write(st.session_state.query)
     if query:
-        st.write(x)
+        
         result1 =  st.session_state.chain.invoke(st.session_state.query) 
         
         if "does not provide any information" in result1 or "does not contain any information" in result1 or "answer is not available" in result1:
