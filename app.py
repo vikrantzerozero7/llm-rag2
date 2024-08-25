@@ -9,7 +9,7 @@ from datetime import datetime
 from langchain_core.prompts import PromptTemplate
 
 import fitz  # PyMuPDF
-import re
+import re as re
 from unidecode import unidecode
 
 
