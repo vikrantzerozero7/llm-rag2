@@ -401,7 +401,7 @@ def main():
     
     st.write(st.session_state.query)
     if query:
-        
+        st.write(x)
         result1 =  st.session_state.chain.invoke(st.session_state.query) 
         
         if "does not provide any information" in result1 or "does not contain any information" in result1 or "answer is not available" in result1:
